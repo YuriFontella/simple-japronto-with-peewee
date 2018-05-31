@@ -1,6 +1,7 @@
-import peewee
+import peewee, psycopg2
+from db.connect import DBpgsql
 
-db = peewee.SqliteDatabase('codigo_avulso.db')
+db = DBpgsql()
 
 class Users(peewee.Model):
     name = peewee.CharField()
@@ -8,4 +9,4 @@ class Users(peewee.Model):
     password = peewee.CharField()
 
     class Meta:
-        database = db
+        database = db.connect()

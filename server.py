@@ -5,4 +5,4 @@ app = Application()
 
 routes.add_routes(app.router)
 
-app.run(debug=True)
+app.run(debug=True, port=9002)

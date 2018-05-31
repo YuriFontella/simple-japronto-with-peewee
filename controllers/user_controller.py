@@ -7,6 +7,7 @@ async def index(request):
     users = [user for user in users]
 
     return request.Response(json.dumps(users))
+
 async def create(request):
     user_id = Users.insert(request.json).execute()
 
@@ -23,6 +24,7 @@ async def update(request):
     Users.update(request.json).where(Users.id == id).execute()
 
     return request.Response(json.dumps(retrieve(id)))
+
 async def delete(request):
     id = request.match_dict['id']
 
