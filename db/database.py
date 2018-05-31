@@ -1,4 +1,4 @@
-from playhouse.postgres_ext import PostgresqlExtDatabase
+from peewee import PostgresqlDatabase
 
 class Database:
 
@@ -10,7 +10,7 @@ class Database:
 
   def connect(self):
     if self.conn is None:
-      self.conn = PostgresqlExtDatabase('db_dev', user='postgres', password='123456', host='127.0.0.1', port='5432')
+      self.conn = PostgresqlDatabase('db_dev', user='postgres')
 
 
     return self.conn
