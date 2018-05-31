@@ -1,7 +1,7 @@
-import peewee, psycopg2
-from db.connect import DBpgsql
+import peewee
+from db.database import Database
 
-db = DBpgsql()
+db = Database()
 
 class Users(peewee.Model):
     name = peewee.CharField()

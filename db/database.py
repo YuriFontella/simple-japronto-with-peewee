@@ -1,6 +1,6 @@
 from playhouse.postgres_ext import PostgresqlExtDatabase
 
-class DBpgsql:
+class Database:
 
   conn = None
 
